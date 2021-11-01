@@ -79,3 +79,29 @@ function startQuiz() {
     renderCounter();
     Timer = setInterval(renderCounter, 1000);
 }
+
+function renderProgress(){
+    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    }
+}
+
+function renderCounter(){
+    if(count <= questionTime){
+        counter.innerHTML = count;
+       
+        count++
+    }else{
+        count = 0;
+        // change a point in progressbar to red
+        wrongAnswer();
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }else{
+            // end the quiz and show the score
+            clearInterval(Timer);
+            scoreRender();
+        }
+    }
+}
