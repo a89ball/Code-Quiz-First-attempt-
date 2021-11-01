@@ -59,3 +59,11 @@ let score = 0;
     },
     ]
 
+    function renderQuestion(){
+        let Q = questions[runningQuestion];
+        question.innerHTML = "<p>"+ Q.question +"</p>";
+        choice1.innerHTML = Q.choice1;
+        choice2.innerHTML = Q.choice2;
+        choice3.innerHTML = Q.choice3;
+        choice4.innerHTML = Q.choice4;
+    }
