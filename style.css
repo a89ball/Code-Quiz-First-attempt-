@@ -9,6 +9,21 @@ body{
     font-family: 'Big Shoulders Stencil Display', cursive;
 }
 
+.heading{
+    width: 1000px;
+    margin-top:70px;
+    height: 60vh;
+    padding: 5%;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 40px;
+    left: 200px;
+}
 
 h1{
     font-size: 5.4rem;
@@ -17,6 +32,34 @@ h1{
     
 
 }
+
+
+#question p{
+    margin : 0;
+    padding : 15px;
+    font-size: 2.25em;
+    font-family: baskerville;
+    text-align: center;
+}
+.choice{
+    width: 350px;
+    height: 60px;
+    display: inline-block;
+    padding: 10px 0 10px 15px;
+    vertical-align: middle;
+    border: 2px solid #a1a9bd;
+    border-radius: 10px;
+    margin: 20px;
+    color: black;
+    position: relative;
+    left: 60px;
+}
+
+.choice:hover{
+    border : 2px solid grey;
+    font-weight: bold;
+}
+
 
 h2{
     font-size: 4.2rem;
@@ -35,30 +78,43 @@ h2{
     padding: 2rem
 
 }
-
-.flex-column {
-
-        display: flex;
-        flex-direction: column;
+#ScoreBar{
+    width : 5000px;
+    position: absolute;
+    bottom : 0px;
+    right : 0px;
+    padding:5px;
+    text-align: right;
+}
+.prog{
+    width : 15px;
+    height : 15px;
+    border: 1px solid #a1a9bd;
+    display: inline-block;
+    border-radius: 25%;
+    margin-left : 5px;
+    margin-right : 5px;
 }
 
-.flex-center{
-    justify-content:center;
-    align-items:center;
-}
 
-.justify-center{
-    justify-content: center;
-}
-
-.text-center{
+#scoreContainer p{
+    position: absolute;
+    display: block;
+    width : 590px;
+    height :59px;
+    top:620px;
+    left:425px;
+    background-color: white;
+    border: 1px solid #a1a9bd;
+    font-size: 1.5em;
+    font-weight: bold;
     text-align: center;
 }
 
-.hidden{
-    display: none;
-}
 
+#counter{
+    font-size: 1em;
+}
 
 #start{
     font-size: 2.4rem;
@@ -108,4 +164,24 @@ h2{
         border-radius: 20px;
      }
 
-     
+     .choice{
+        width: 350px;
+        height: 60px;
+        display: inline-block;
+        padding: 10px 0 10px 15px;
+        vertical-align: middle;
+        border: 2px solid #a1a9bd;
+        border-radius: 10px;
+        margin: 20px;
+        color: black;
+        position: relative;
+        left: 60px;
+    
+    }
+
+    .input{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: -40px;
+    }

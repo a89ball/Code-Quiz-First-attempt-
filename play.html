@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
+    <title>Coding</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
@@ -26,10 +24,10 @@
                 <div id="quiz" style="display: none;">
                     <div id="question"></div>
                     <div id="choices">
-                        <div class="btn" id="first" onclick="checkAnswer('first')"></div>
-                        <div class="btn" id="second" onclick="checkAnswer('second')"></div>
-                        <div class="btn" id="third" onclick="checkAnswer('third')"></div>
-                        <div class="btn" id="fourth" onclick="checkAnswer('fourth')"></div>
+                        <div class="choice" id="first" onclick="checkAnswer('first')"></div>
+                        <div class="choice" id="second" onclick="checkAnswer('second')"></div>
+                        <div class="choice" id="third" onclick="checkAnswer('third')"></div>
+                        <div class="choice" id="fourth" onclick="checkAnswer('fourth')"></div>
                     </div>
                     <div id="timer"> Time:
                         <div id="counter"></div>
