@@ -23,7 +23,7 @@ let questions = [
         choice2: 'Hypertexual Makeup Language',
         choice3: 'Hightense Making Language',
         choice4: 'Hightend Markup Langauge',
-        answer: '1',
+        correct: '1',
     },
     {
         questions: 'What does CSS stand for?',
@@ -31,7 +31,7 @@ let questions = [
         choice2: 'Cascading Style Sheets',
         choice3: 'Cascading Structured Sheets',
         choice4: 'Center Style Sheets',
-        answer: '2',
+        correct: '2',
     },
     {
         questions: 'What does JS stand for?',
@@ -39,7 +39,7 @@ let questions = [
         choice2: 'JavaScript',
         choice3: 'JQueryScript',
         choice4: 'JStylesScript',
-        answer: '2',
+        correct: '2',
     },
     {
         questions: 'The Bootstrap grid system is based on how many columns??',
@@ -47,7 +47,7 @@ let questions = [
         choice2: '19',
         choice3: '12',
         choice4: '3',
-        answer: '3',
+        correct: '3',
     },
     {
         questions: 'What does XML stand for?',
@@ -55,7 +55,7 @@ let questions = [
         choice2: 'eXecutable Multiple Language',
         choice3: 'eXTra Multi-Program Language',
         choice4: 'eXamine Multiple Language',
-        answer: '1',
+        correct: '1',
     },
 ]
 
@@ -80,28 +80,75 @@ function startQuiz() {
     Timer = setInterval(renderCounter, 1000);
 }
 
-function renderProgress(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+function renderProgress() {
+    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
+        progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
     }
 }
 
-function renderCounter(){
-    if(count <= questionTime){
+function renderCounter() {
+    if (count <= questionTime) {
         counter.innerHTML = count;
-       
+
         count++
-    }else{
+    } else {
         count = 0;
-        // change a point in progressbar to red
+        // change a point in progressbar to red when answer is incorrect
         wrongAnswer();
-        if(runningQuestion < lastQuestion){
+        if (runningQuestion < lastQuestion) {
             runningQuestion++;
             renderQuestion();
-        }else{
+        } else {
             // end the quiz and show the score
             clearInterval(Timer);
             scoreRender();
         }
     }
+}
+
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
+        // answer is correct
+        score++;
+        // change progress color to green
+        rightAnswer();
+    } else {
+        // answer is wrong
+        // change progress color to red
+        wrongAnswer();
+    }
+    count = 0;
+    if (runningQuestion < lastQuestion) {
+        runningQuestion++;
+        renderQuestion();
+    } else {
+        // end the quiz and show the score
+        clearInterval(Timer);
+        scoreRender();
+    }
+}
+// correct
+function rightAnswer(){
+    document.getElementById(runningQuestion).style.backgroundColor = "green";
+}
+// incorrect
+function wrongAnswer(){
+    document.getElementById(runningQuestion).style.backgroundColor = "red";
+}
+
+function scoreRender(){
+    const nameVal = document.getElementById('name').value
+   // document.getElementById("demo").innerHTML =nameVal
+        
+  if (nameVal !== null){
+    scoreCon.style.display = "block";
+    const scorePerCent = Math.round(100 * score/questions.length);
+    
+    // choose the image based on the scorePerCent
+    
+    scoreCon.innerHTML += "<p>" + nameVal + " Your Score is: " + scorePerCent +"%</p>";
+  } else{
+      return ''
+  }
+ 
 }
