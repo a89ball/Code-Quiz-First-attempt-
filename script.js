@@ -16,9 +16,9 @@ let count = 0;
 const questionTime = 10; // 10s
 let Timer;
 let score = 0;
-    let questions = [
-        {
-            questions:'What does HTML stand for?',
+let questions = [
+    {
+        questions: 'What does HTML stand for?',
         choice1: 'Hypertext Markup Language',
         choice2: 'Hypertexual Makeup Language',
         choice3: 'Hightense Making Language',
@@ -26,44 +26,56 @@ let score = 0;
         answer: '1',
     },
     {
-        questions:'What does CSS stand for?',
-    choice1: 'Centeral Structured Styling',
-    choice2: 'Cascading Style Sheets',
-    choice3: 'Cascading Structured Sheets',
-    choice4: 'Center Style Sheets',
-    answer: '2',
+        questions: 'What does CSS stand for?',
+        choice1: 'Centeral Structured Styling',
+        choice2: 'Cascading Style Sheets',
+        choice3: 'Cascading Structured Sheets',
+        choice4: 'Center Style Sheets',
+        answer: '2',
     },
     {
-        questions:'What does JS stand for?',
-    choice1: 'J Styles',
-    choice2: 'JavaScript',
-    choice3: 'JQueryScript',
-    choice4: 'JStylesScript',
-    answer: '2',
+        questions: 'What does JS stand for?',
+        choice1: 'J Styles',
+        choice2: 'JavaScript',
+        choice3: 'JQueryScript',
+        choice4: 'JStylesScript',
+        answer: '2',
     },
     {
-        questions:'The Bootstrap grid system is based on how many columns??',
-    choice1: '6',
-    choice2: '19',
-    choice3: '12',
-    choice4: '3',
-    answer: '3',
+        questions: 'The Bootstrap grid system is based on how many columns??',
+        choice1: '6',
+        choice2: '19',
+        choice3: '12',
+        choice4: '3',
+        answer: '3',
     },
     {
-        questions:'What does XML stand for?',
-    choice1: 'eXtensible Markup Language',
-    choice2: 'eXecutable Multiple Language',
-    choice3: 'eXTra Multi-Program Language',
-    choice4: 'eXamine Multiple Language',
-    answer: '1',
+        questions: 'What does XML stand for?',
+        choice1: 'eXtensible Markup Language',
+        choice2: 'eXecutable Multiple Language',
+        choice3: 'eXTra Multi-Program Language',
+        choice4: 'eXamine Multiple Language',
+        answer: '1',
     },
-    ]
+]
 
-    function renderQuestion(){
-        let Q = questions[runningQuestion];
-        question.innerHTML = "<p>"+ Q.question +"</p>";
-        choice1.innerHTML = Q.choice1;
-        choice2.innerHTML = Q.choice2;
-        choice3.innerHTML = Q.choice3;
-        choice4.innerHTML = Q.choice4;
-    }
+function renderQuestion() {
+    let Q = questions[runningQuestion];
+    question.innerHTML = "<p>" + Q.question + "</p>";
+    choice1.innerHTML = Q.choice1;
+    choice2.innerHTML = Q.choice2;
+    choice3.innerHTML = Q.choice3;
+    choice4.innerHTML = Q.choice4;
+}
+
+
+startContainer.addEventListener("click", startQuiz);
+
+function startQuiz() {
+    startContainer.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    renderProgress();
+    renderCounter();
+    Timer = setInterval(renderCounter, 1000);
+}
