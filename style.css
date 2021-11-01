@@ -8,6 +8,8 @@ body{
     font-size: 62.5%;
     font-family: 'Big Shoulders Stencil Display', cursive;
 }
+
+
 h1{
     font-size: 5.4rem;
     color: white;
@@ -57,6 +59,18 @@ h2{
     display: none;
 }
 
+
+#start{
+    font-size: 2.4rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: aliceblue;
+    background-image: linear-gradient(to right, #D31027 0%, #e25061  51%, #D31027  100%);
+}
+
 .btn{
     font-size: 2.4rem;
     padding: 2rem 0;
@@ -83,10 +97,15 @@ h2{
         transform: none;
      }
 
-     #high-score {
-        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(241,165,0,1) 0%);;
+
+     #timer{
+        position: absolute;
+        height : 58px;
+        width : 120px;
+        bottom : 12px;
+        text-align: center;
+        border: 2px solid #a1a9bd;
+        border-radius: 20px;
      }
 
-     #high-score:hover {
-         box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 0,0.5);
-     }
+     
