@@ -10,12 +10,6 @@ const progress = document.getElementById("ScoreBar");
 const scoreCon = document.getElementById("scoreContainer");
 
 
-const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-let count = 0;
-const questionTime = 10; // 10s
-let Timer;
-let score = 0;
 let questions = [
     {
         questions: 'What does HTML stand for?',
@@ -59,16 +53,23 @@ let questions = [
     },
 ]
 
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 0;
+const questionTime = 10; // 10s
+let Timer;
+let score = 0;
+
 function renderQuestion() {
     let Q = questions[runningQuestion];
-    question.innerHTML = "<p>" + Q.question + "</p>";
+    question.innerHTML = "<p>" + Q.questions + "</p>";
     choice1.innerHTML = Q.choice1;
     choice2.innerHTML = Q.choice2;
     choice3.innerHTML = Q.choice3;
     choice4.innerHTML = Q.choice4;
 }
 
-
+// starts quiz
 startContainer.addEventListener("click", startQuiz);
 
 function startQuiz() {
@@ -77,7 +78,7 @@ function startQuiz() {
     quiz.style.display = "block";
     renderProgress();
     renderCounter();
-    Timer = setInterval(renderCounter, 1000);
+    Timer = setInterval(renderCounter, 1000); //1s
 }
 
 function renderProgress() {
